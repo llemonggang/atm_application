@@ -8,8 +8,6 @@ $(document).ready(function () {
     $('#amountChecking').val('');
     if (newBalance > 0) {
       $('#check').css('background-color','#E3E3E3');
-    } else {
-      $('#check').css('background-color','tomato');
     }
   });
 
@@ -22,6 +20,9 @@ $(document).ready(function () {
     if (newBalance < 0) {
       $('#checkingBalance').text(currentBalance);
       alert('Insufficient Funds')
+    }
+    if (newBalance = 0) {
+      $('#check').css('background-color','tomato');
     }
   });
 
