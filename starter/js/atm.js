@@ -1,60 +1,31 @@
 $(document).ready(function () {
 
   $('#depositChecking').on('click', function() {
-    if ($(this)) {
-      addChecking();
-      resetPlaceholder();
-    }
+    var currentBalance = parseInt($('#checkingBalance').text());
+    var value = parseInt($('#amountChecking').val());
+    var newBalance = currentBalance + value;
+    $('#checkingBalance').text(newBalance);
+    $('#amountChecking').val('');
   });
   $('#withdrawChecking').on('click', function() {
-    if ($(this)) {
-      minusChecking();
-      resetPlaceholder();
-    }
+    var currentBalance = parseInt($('#checkingBalance').text());
+    var value = parseInt($('#amountChecking').val());
+    var newBalance = currentBalance - value;
+    $('#checkingBalance').text(newBalance);
+    $('#amountChecking').val('');
   });
   $('#depositSavings').on('click', function() {
-    if ($(this)) {
-      addSavings();
-      resetPlaceholder();
-    }
+    var currentBalance = parseInt($('#savingsBalance').text());
+    var value = parseInt($('#amountSavings').val());
+    var newBalance = currentBalance + value;
+    $('#savingsBalance').text(newBalance);
+    $('#amountSavings').val('');
   });
   $('#withdrawSavings').on('click', function() {
-    if ($(this)) {
-      minusSavings();
-      resetPlaceholder();
-    }
+    var currentBalance = parseInt($('#savingsBalance').text());
+    var value = parseInt($('#amountSavings').val());
+    var newBalance = currentBalance - value;
+    $('#savingsBalance').text(newBalance);
+    $('#amountSavings').val('');
   });
 });
-
-function addChecking() {
-  var value = $('input').val();
-  var balance = $('#checkingBalance').val();
-  var total = value + balance;
-  $('#checkingBalance').text(total);
-}
-
-function minusChecking() {
-  var value = $('input').val();
-  var balance = $('#checkingBalance').val();
-  var total = balance - value;
-  $('#checkingBalance').text(total);
-}
-
-function addSavings() {
-  var value = $('input').val();
-  var balance = $('#savingsBalance').val();
-  var total = value + balance;
-  $('#checkingBalance').text(total);
-}
-
-function minusSavings() {
-  var value = $('input').val();
-  var balance = $('#savingsBalance').val();
-  var total = balance - value;
-  $('#savingsBalance').text(total);
-}
-
-// function resetPlaceholder() {
-//   $('#amountChecking').val('enter an amount');
-// }
- 
